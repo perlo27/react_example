@@ -1,7 +1,7 @@
 const express = require('express');
 const api = require('./api');
 const app = express();
-
+var bodyParser = require('body-parser');
 app.set('port', (process.env.PORT || 3001));
 
 // Express only serves static assets in production
