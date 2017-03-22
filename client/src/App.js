@@ -3,10 +3,13 @@ import logo from './logo.svg'
 import './App.css'
 
 class App extends Component {
-    state = {
-        hurra: 'NOPE'
-    }
+   constructor(props) {
+       super(props)
+       this.state = {
+           hurra: 'NOPE'
+       }
 
+   }
     componentDidMount() {
         fetch('/api/article')
             .then((artarray) => {
