@@ -1,23 +1,18 @@
-var path = require('path');
-var express = require('express');
-var api = require('./api');
-// var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+
+
+
+const app = express();
 
 app.set('port', (process.env.PORT || 3001));
 
-
+// Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
-// app.use(bodyParser.json());
-// app.use('/api', api);
 
-app.listen(app.get('port'), 'localhost', function (err) {
-    if (err) {
-        console.log('error from server-', err);
-        return;
-    }
 
-    console.log(`Listening at http://localhost:${app.get('port')}`);
+
+app.listen(app.get('port'), () => {
+    console.log(`Find the server at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
