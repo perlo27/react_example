@@ -1,7 +1,5 @@
 const express = require('express');
-
-
-
+const api = require('./api');
 const app = express();
 
 app.set('port', (process.env.PORT || 3001));
