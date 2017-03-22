@@ -8,12 +8,13 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('api/articles').then((artarray) => {
-            return artarray[0]
-        }).then((art1) => {
-            const artobj = JSON.parse(art1)
+        fetch('api/article').then((res) => {
+            if (!res.ok) throw new Error(res.statusText)
+            return res.json()
+        }).then((resarr) => {
+
             this.setState({
-                hey: artobj.title
+                hey: resarr[0].title
             })
         }).catch((err) => {
             alert(err)
