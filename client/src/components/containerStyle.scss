@@ -1,0 +1,67 @@
+//normalize
+@import '~normalize.css';
+@import '../stylevariables.scss';
+//Loaders
+
+
+//common styles
+.app {
+  min-height: 100vh;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.navbar-brand > img {
+  margin-right: 10px;
+}
+.nav-user {
+  border: none;
+  color: rgba(91, 192, 222, 0.9);
+  background-color: transparent;
+  line-height: 1.5;
+}
+footer {
+  border-top: 1px solid #e2e2e2;
+  height: 20px;
+  width: 90%;
+  margin: 10px auto 10px;
+  .author {
+    margin-left: 15px;
+    font-size: 12px;
+    color: #999;
+  }
+}
+.main {
+  min-width: 300px;
+  width: auto;
+  margin: 0 10px;
+}
+
+@media (max-width: #{$tablet-width - 1px}) {
+  .main {
+    margin: 0 30px;
+  }
+}
+
+@media (min-width: #{$tablet-width}) {
+  .main {
+    margin: 0 auto;
+    margin-top: 80px;
+    @media (max-width: #{$wide-desktop-width - 1px}) {
+      width: 960px;
+    }
+    @media (max-width: #{$desktop-width - 1px}) {
+      width: 705px;
+    }
+  }
+}
+@media (min-width: #{$wide-desktop-width}) {
+  .main {
+    width: 1125px;
+  }
+}

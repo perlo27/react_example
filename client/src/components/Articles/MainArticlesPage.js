@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import React, { Component, PropTypes } from 'react'
 import ArticleThumb from './ArticleThumb'
-//import Loader from '../Loader'
+import Loader from '../Loader'
 import { loadAllArticles } from '../../AC/articles'
 //import './articlesStyles.scss'
 
@@ -20,7 +20,7 @@ class MainArticlesPage extends Component {
 
     render() {
         const { articles, loading } = this.props
-        if (loading || !articles.length) return <h1>LOADING</h1>//<Loader />
+        if (loading || !articles.length) return <Loader />
 
         return (
             <div className="main">
