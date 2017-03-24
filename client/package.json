@@ -7,9 +7,11 @@
     "immutable": "^3.8.1",
     "jquery": "^3.2.1",
     "loaders.css": "^0.1.2",
+    "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
+    "react-day-picker": "^2.5.0",
     "react-dom": "^15.4.2",
     "react-loaders": "^2.3.0",
     "react-redux": "^4.4.5",
@@ -17,8 +19,7 @@
     "react-select": "^1.0.0-rc.1",
     "reactstrap": "^4.3.0",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0",
-    "react-day-picker": "^2.5.0"
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "node-sass": "^4.5.1",
