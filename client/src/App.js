@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Provider } from 'react-redux'
 import store from './store'
-import Main from './Components/Articles/MainArticlesPage'
+import Main from './components/Articles/MainArticlesPage'
 
 class App extends Component {
     state = {

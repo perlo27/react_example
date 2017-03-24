@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import 'loaders.css/src/animations/ball-grid-pulse.scss'
 import { Loader } from 'react-loaders'
 import React, { Component, PropTypes } from 'react'
-import CommentList from '../CommentList'
+// import CommentList from '../CommentList'
 import { deleteArticle, loadArticle } from '../../AC/articles'
 import RelatedArticles from './RelatedArticles'
 
@@ -60,7 +60,7 @@ class ArticlePage extends Component {
                             <section className="story-content">
                                 <p className="story-content-text">{article.text}</p>
                             </section>
-                            <CommentList article={article} />
+                            {/*<CommentList article={article} />*/}
                         </div>
                         <RelatedArticles relatedStories={article.relatedStories} />
                     </div>
