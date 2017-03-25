@@ -1,5 +1,4 @@
 //normalize
-@import '../../node_modules/normalize.css';
 @import 'stylevariables.scss';
 //Loaders
 
@@ -15,9 +14,16 @@
 .content {
   flex: 1;
 }
-
-.navbar-brand > img {
-  margin-right: 10px;
+.navbar {
+  border-bottom: 1px solid #cecece;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.navbar-brand {
+  cursor: pointer;
+  & > img {
+    margin-right: 10px;
+  }
 }
 .nav-user {
   border: none;

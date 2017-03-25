@@ -40,7 +40,7 @@ class NewCommentForm extends Component {
             <FormGroup onSubmit={this.handleSubmit}>
                 <Label for="newcomment">{user}:</Label>
                 <Input type="textarea" id="newcomment" value={this.state.text} onChange={this.handleChange}/>
-                <Button outline color="success comments-publish-btn" onClick={this.handleSubmit}> Publish </Button>
+                <Button type="submit" outline color="success comments-publish-btn" onClick={this.handleSubmit}> Publish </Button>
             </FormGroup>
         )
     }

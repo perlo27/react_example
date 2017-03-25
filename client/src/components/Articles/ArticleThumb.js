@@ -19,10 +19,14 @@ function ArticleThumb({ article }) {
                 </figure>
                 <div className="story-body">
                     <h2 className="headline">
-                        <a href="#">{article.title}</a>
+                        <Link to={`/articles/${article.id}`}>
+                            {article.title}
+                        </Link>
                     </h2>
                     <div className="thumb">
-                        <a href="#"><img src={article.imageLink} alt="" /></a>
+                        <Link to={`/articles/${article.id}`}>
+                            <img src={article.imageLink} alt="" />
+                        </Link>
                     </div>
                     <p className="summary">{article.teaser}</p>
                     <p className="byline">{article.date}</p>

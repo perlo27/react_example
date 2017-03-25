@@ -54,8 +54,9 @@ export default connect((state) => {
     const filteredArticles = articleArray.filter((article, index) => {
         const published = Date.parse(article.date)
         return (!selected.length || selected.includes(article.id)) &&
-                (!from || !to || (published > from && published < to)) && (index < 4)
-    })
+                (!from || !to || (published > from && published < to))
+    }).reverse()
+    console.log(filteredArticles[1])
     return {
         articles: filteredArticles,
         loaded: articles.get('loaded'),

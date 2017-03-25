@@ -1,8 +1,7 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
-import { Link } from 'react-router'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'
 import ModalAuth from './ModalAuth'
+import history from '../history'
 
 class Navigationbar extends React.Component {
     constructor(props) {
@@ -18,14 +17,19 @@ class Navigationbar extends React.Component {
             isOpen: !this.state.isOpen
         })
     }
+
+    handleBrandClick = (ev) => {
+        ev.preventDefault()
+        history.push('/')
+    }
     render() {
         return (
             <div>
                 <Navbar color="faded" light toggleable>
                     <NavbarToggler right onClick={this.toggle} />
-                    <NavbarBrand>
+                    <NavbarBrand onClick={this.handleBrandClick} >
                         <img src="https://reactstrap.github.io/assets/logo.png" alt="" width="40px" height="40px"/>
-                        <Link to="/">News source</Link>
+                        News source
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

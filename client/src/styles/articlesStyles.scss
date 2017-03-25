@@ -12,8 +12,11 @@
   margin: 10% auto;
   width: 1px;
 }
-.loader-inner > div {
-  background-color: #3ae;
+.loader-inner {
+  margin-left: -28.5px;
+  & > div {
+    background-color: #3ae;
+  }
 }
 
 
@@ -37,6 +40,7 @@
     font-size: 0.8125rem;
     line-height: 1rem;
     font-weight: 700;
+    margin-bottom: 20px;
     font-style: normal;
     font-family: "Libre Franklin",arial,helvetica,sans-serif;
     letter-spacing: 0.05em;
@@ -131,6 +135,9 @@
     display: flex;
     flex-direction: column;
 
+    .loader {
+      margin-top: 0;
+    }
     .comments-show-button {
       margin: 10px auto 30px;
     }

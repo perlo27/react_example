@@ -61,6 +61,7 @@ class CommentList extends Component {
             )
 
         return (
+
             <div className="comments-body">
                 {btn}
                 {body}
