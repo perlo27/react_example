@@ -51,12 +51,11 @@ export default connect((state) => {
     const { from, to } = filters.get('dateRange')
 
     const articleArray = articles.get('entities').valueSeq().toArray()
-    const filteredArticles = articleArray.filter((article, index) => {
+    const filteredArticles = articleArray.filter((article) => {
         const published = Date.parse(article.date)
         return (!selected.length || selected.includes(article.id)) &&
                 (!from || !to || (published > from && published < to))
     }).reverse()
-    console.log(filteredArticles[1])
     return {
         articles: filteredArticles,
         loaded: articles.get('loaded'),

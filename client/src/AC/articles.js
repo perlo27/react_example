@@ -1,7 +1,6 @@
 import $ from 'jquery'
 import { DELETE_ARTICLE, LOAD_ALL_ARTICLES, LOAD_ARTICLE, START, SUCCESS } from '../constants'
-
-// import history from '../history'
+import history from '../history'
 
 export function deleteArticle(id) {
     return {
@@ -25,10 +24,9 @@ export function loadArticle(id) {
             type: LOAD_ARTICLE + START,
             payload: { id }
         })
-// setTimeout here is only to simulate long server response
+
 // jquery used for example
-        setTimeout(() => {
-            $.get(`/api/article/${id}`)
+        $.get(`/api/article/${id}`)
                 .done(response => dispatch({
                     type: LOAD_ARTICLE + SUCCESS,
                     payload: { id },
@@ -37,6 +35,5 @@ export function loadArticle(id) {
                 .fail((error) => {
                     history.replace(`/error?message=${error.statusText}`)
                 })
-        }, 1000)
     }
 }
