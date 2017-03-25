@@ -3,12 +3,15 @@ import React, { Component, PropTypes } from 'react'
 import ArticleThumb from './ArticleThumb'
 import Loader from '../Loader'
 import { loadAllArticles } from '../../AC/articles'
-//import './articlesStyles.scss'
 
 const propTypes = {
     articles: PropTypes.array.isRequired,
     loading: PropTypes.bool,
     loaded: PropTypes.bool
+}
+
+const defaultProps = {
+    articles: []
 }
 
 class MainArticlesPage extends Component {
@@ -20,7 +23,7 @@ class MainArticlesPage extends Component {
 
     render() {
         const { articles, loading } = this.props
-        if (loading || !articles.length) return <Loader />
+        if (loading || !articles.length) return <Loader type="ball-grid-pulse" active />
 
         return (
             <div className="main">
@@ -40,23 +43,24 @@ class MainArticlesPage extends Component {
 }
 
 MainArticlesPage.propTypes = propTypes
+MainArticlesPage.defaultProps = defaultProps
 
 export default connect((state) => {
-        const { articles, filters } = state
-        const selected = filters.get('selected')
-        const { from, to } = filters.get('dateRange')
+    const { articles, filters } = state
+    const selected = filters.get('selected')
+    const { from, to } = filters.get('dateRange')
 
-        const articleArray = articles.get('entities').valueSeq().toArray()
-        const filteredArticles = articleArray.filter((article, index) => {
-            const published = Date.parse(article.date)
-            return (!selected.length || selected.includes(article.id)) &&
+    const articleArray = articles.get('entities').valueSeq().toArray()
+    const filteredArticles = articleArray.filter((article, index) => {
+        const published = Date.parse(article.date)
+        return (!selected.length || selected.includes(article.id)) &&
                 (!from || !to || (published > from && published < to)) && (index < 4)
-        })
-        return {
-            articles: filteredArticles,
-            loaded: articles.get('loaded'),
-            loading: articles.get('loading')
-        }
-    },
+    })
+    return {
+        articles: filteredArticles,
+        loaded: articles.get('loaded'),
+        loading: articles.get('loading')
+    }
+},
     { loadAllArticles }
 )(MainArticlesPage)

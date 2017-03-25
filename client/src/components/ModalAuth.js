@@ -31,14 +31,16 @@ class ModalAuth extends React.Component {
 
     handleChange(e) {
         e.preventDefault()
-        if (e.target.value.length < 16) this.setState({
-            userName: e.target.value
-        })
+        if (e.target.value.length < 16) {
+            this.setState({
+                userName: e.target.value
+            })
+        }
     }
 
     render() {
         const { userName } = this.props
-        if ( userName ) return  <UserLogoutButton userName={userName} logoutUser={this.props.logoutUser}/>
+        if (userName) return <UserLogoutButton userName={userName} logoutUser={this.props.logoutUser} />
         return (
             <div>
                 <Button outline color="info" onClick={this.toggle}>{this.props.buttonLabel}</Button>
@@ -50,7 +52,11 @@ class ModalAuth extends React.Component {
                     <ModalHeader toggle={this.toggle}>Log in to write comments</ModalHeader>
                     <ModalBody>
                         <InputGroup>
-                            <Input placeholder="Enter your name" value={this.state.userName} onChange={this.handleChange} />
+                            <Input
+                              placeholder="Enter your name"
+                              value={this.state.userName}
+                              onChange={this.handleChange}
+                            />
                         </InputGroup>
                     </ModalBody>
                     <ModalFooter>

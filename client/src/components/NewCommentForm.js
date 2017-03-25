@@ -2,9 +2,15 @@ import React, { Component, PropTypes } from 'react'
 import { FormGroup, Input, Button, Label } from 'reactstrap'
 
 const propTypes = {
+    //from CommentList
     articleId: PropTypes.string.isRequired,
-    addComment: PropTypes.func.isRequired,
-    user: PropTypes.string.isRequired
+    user: PropTypes.string.isRequired,
+    addComment: PropTypes.func.isRequired
+}
+
+const defaultProps = {
+    articleId: '',
+    user: ''
 }
 
 class NewCommentForm extends Component {
@@ -41,5 +47,7 @@ class NewCommentForm extends Component {
 }
 
 NewCommentForm.propTypes = propTypes
+
+NewCommentForm.defaultProps = defaultProps
 
 export default NewCommentForm

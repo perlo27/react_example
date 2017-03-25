@@ -1,9 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 class ErrorPage extends Component {
-    static propTypes = {
-
-    };
 
     render() {
         return (

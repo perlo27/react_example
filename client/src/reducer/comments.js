@@ -15,11 +15,12 @@ const defaultState = new Map({
 })
 
 export default (comments = defaultState, action) => {
-    const { type, payload, response, generatedId } = action
+    const { type, payload, response } = action
 
     switch (type) {
     case ADD_COMMENT:
-        return comments.setIn(['entities', generatedId], new CommentModel({ ...payload.comment, id: generatedId }))
+        const { comment: { user, text, id } } = payload
+        return comments.setIn(['entities', id], new CommentModel({ id, user, text }))
 
     case LOAD_COMMENTS_FOR_ARTICLE + SUCCESS:
         return comments.update('entities', entities =>

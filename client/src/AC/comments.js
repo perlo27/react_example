@@ -1,12 +1,34 @@
-import { ADD_COMMENT, LOAD_COMMENTS_FOR_PAGE, LOAD_COMMENTS_FOR_ARTICLE} from '../constants'
+import { ADD_COMMENT, LOAD_COMMENTS_FOR_PAGE, LOAD_COMMENTS_FOR_ARTICLE } from '../constants'
 
-export function addComment(comment, articleId) {
-    return {
-        type: ADD_COMMENT,
-        payload: {
-            articleId, comment
-        },
-        generateId: true
+export function addComment(comment, article) {
+    console.log(comment)
+    const { text, user } = comment
+    const body = {
+        text,
+        user,
+        article
+    }
+
+    return (dispatch) => {
+        fetch('/api/comment', {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((res) => {
+            if (!res.ok) throw new Error(res.statusText)
+            return res.json()
+        })
+        .then((comment) => {
+            dispatch({
+                type: ADD_COMMENT,
+                payload: {
+                    comment
+                }
+            })
+        })
     }
 }
 

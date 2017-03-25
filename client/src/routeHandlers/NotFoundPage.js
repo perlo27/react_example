@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 function NotFoundPage(props) {
     return (
@@ -6,9 +6,6 @@ function NotFoundPage(props) {
             <h1>Sorry, not found page</h1>
         </div>
     )
-}
-
-NotFoundPage.propTypes = {
 }
 
 export default NotFoundPage

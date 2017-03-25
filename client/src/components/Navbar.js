@@ -23,9 +23,9 @@ class Navigationbar extends React.Component {
             <div>
                 <Navbar color="faded" light toggleable>
                     <NavbarToggler right onClick={this.toggle} />
-                    <NavbarBrand href="/">
+                    <NavbarBrand>
                         <img src="https://reactstrap.github.io/assets/logo.png" alt="" width="40px" height="40px"/>
-                        News source
+                        <Link to="/">News source</Link>
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

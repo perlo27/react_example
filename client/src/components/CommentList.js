@@ -1,13 +1,14 @@
+
 import React, { Component, PropTypes } from 'react'
-import Comment from './Comment'
-import toggleOpen from './../decorators/toggleOpen'
-import NewCommentForm from './NewCommentForm'
-import 'loaders.css/src/animations/ball-grid-pulse.scss'
 import { Loader } from 'react-loaders'
 import { connect } from 'react-redux'
+import { Button } from 'reactstrap'
+import Comment from './Comment'
+import NewCommentForm from './NewCommentForm'
+import toggleOpen from './../decorators/toggleOpen'
 import { getRelation } from '../store/helpers'
 import { addComment, loadCommentsForArticle } from '../AC/comments'
-import { Button } from 'reactstrap'
+
 
 const propTypes = {
     comments: PropTypes.array,

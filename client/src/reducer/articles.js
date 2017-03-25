@@ -24,14 +24,15 @@ const defaultState = new Map({
 })
 
 export default (articles = defaultState, action) => {
-    const { type, payload, generatedId, response } = action
+    const { type, payload, response } = action
 
     switch (type) {
     case DELETE_ARTICLE:
         return articles.deleteIn(['entities', payload.id])
 
     case ADD_COMMENT:
-        return articles.updateIn(['entities', payload.articleId, 'comments'], comments => comments.concat(generatedId))
+        const { comment: { article, id} } = payload
+        return articles.updateIn(['entities', article, 'comments'], comments => comments.concat(id))
 
     case LOAD_ALL_ARTICLES + START:
         return articles.set('loading', true)
@@ -60,7 +61,7 @@ export default (articles = defaultState, action) => {
         return articles
                 .setIn(['entities', payload.articleId, 'commentsLoading'], false)
                 .setIn(['entities', payload.articleId, 'commentsLoaded'], true)
-    }
 
-    return articles
+    default: return articles
+    }
 }
