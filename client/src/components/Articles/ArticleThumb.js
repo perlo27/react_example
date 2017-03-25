@@ -6,6 +6,13 @@ const propTypes = {
 }
 
 function ArticleThumb({ article }) {
+    let { date } = article
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }
+    date = new Date(date).toLocaleString("en-US", options)
     return (
         <li>
             <article className="story">
@@ -14,7 +21,7 @@ function ArticleThumb({ article }) {
                         <img src={article.imageLink} alt="" />
                     </Link>
                     <figcaption className="caption">
-                        <span>asdsadasdadasdas</span>
+                        <span>Photo description</span>
                     </figcaption>
                 </figure>
                 <div className="story-body">
@@ -29,7 +36,7 @@ function ArticleThumb({ article }) {
                         </Link>
                     </div>
                     <p className="summary">{article.teaser}</p>
-                    <p className="byline">{article.date}</p>
+                    <p className="byline">{date}</p>
                 </div>
             </article>
         </li>

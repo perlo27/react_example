@@ -34,7 +34,7 @@ class Navigationbar extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="https://github.com/perlo27/js_ru_23_09_19_30">Github</NavLink>
+                                <NavLink href="https://github.com/perlo27/react_example">Github</NavLink>
                             </NavItem>
                             <NavItem>
                                 <ModalAuth buttonLabel="LOG IN" />
