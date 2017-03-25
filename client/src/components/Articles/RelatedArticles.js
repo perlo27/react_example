@@ -38,5 +38,5 @@ RelatedArticle.defaultProps = {
 }
 
 export default connect((state, props) => ({
-    relatedStories: props.relatedStories.map(articleId => state.articles.getIn(['entities', articleId]))
+    relatedStories: props.relatedStories ? props.relatedStories.map(articleId => state.articles.getIn(['entities', articleId])) : []
 }), { loadAllArticles })(RelatedArticle)

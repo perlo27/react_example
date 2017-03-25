@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import 'loaders.css/src/animations/ball-grid-pulse.scss'
+// import 'loaders.css/src/animations/ball-grid-pulse.scss'
 import { Loader } from 'react-loaders'
 import React, { Component, PropTypes } from 'react'
 import CommentList from '../CommentList'
