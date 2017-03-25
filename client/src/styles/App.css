@@ -1,4 +1,4 @@
-@import url(~normalize.css);
+@import url(../../node_modules/normalize.css);
 @import url("https://fonts.googleapis.com/css?family=Libre+Franklin");
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700");
 .app {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, Redirect, IndexRedirect } from 'react-router'
 import Container from './components/Container'
 import Filters from './components/Filters'
-import App from './App'
+
 import ArticlePage from './routeHandlers/ArticlePage'
 import NotFoundPage from './routeHandlers/NotFoundPage'
 import ErrorPage from './routeHandlers/ErrorPage'

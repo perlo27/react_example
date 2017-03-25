@@ -31,9 +31,9 @@ class NewCommentForm extends Component {
     render() {
         const { user } = this.props
         return (
-            <FormGroup onSubmit = {this.handleSubmit}>
+            <FormGroup onSubmit={this.handleSubmit}>
                 <Label for="newcomment">{user}:</Label>
-                <Input type="textarea" id="newcomment" value={this.state.text} onChange = {this.handleChange}/>
+                <Input type="textarea" id="newcomment" value={this.state.text} onChange={this.handleChange}/>
                 <Button outline color="success comments-publish-btn" onClick={this.handleSubmit}> Publish </Button>
             </FormGroup>
         )

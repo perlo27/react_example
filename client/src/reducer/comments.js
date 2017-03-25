@@ -15,7 +15,7 @@ const defaultState = new Map({
 })
 
 export default (comments = defaultState, action) => {
-    const { type, payload, response, error, generatedId } = action
+    const { type, payload, response, generatedId } = action
 
     switch (type) {
     case ADD_COMMENT:
@@ -37,8 +37,7 @@ export default (comments = defaultState, action) => {
                 )
                 .setIn(['pagination', payload.page], new List(response.records.map(record => record.id)))
                 .set('total', response.total)
+    default: return comments
 
     }
-
-    return comments
 }

@@ -14,6 +14,6 @@ export default (user = DefaultState, action) => {
         return user.set('name', payload.userName)
     case LOGOUT_USER:
         return user.delete('name')
+    default: return user
     }
-    return user
 }

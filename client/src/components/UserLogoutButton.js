@@ -1,7 +1,11 @@
-import React from 'react'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap'
+import React, { PropTypes } from 'react'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
-export default class UserLogoutButton extends React.Component {
+const propTypes = {
+    userName: PropTypes.string
+}
+
+class UserLogoutButton extends React.Component {
     constructor(props) {
         super(props)
 
@@ -34,3 +38,7 @@ export default class UserLogoutButton extends React.Component {
         )
     }
 }
+
+UserLogoutButton.propTypes = propTypes
+
+export default UserLogoutButton

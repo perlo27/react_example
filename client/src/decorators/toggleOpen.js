@@ -8,7 +8,7 @@ export default function toggleOpen(Component) {
         }
 
         render() {
-            return <Component {...this.props} {...this.state} toggleOpen = {this.toggleOpen}/>
+            return <Component {...this.props} {...this.state} toggleOpen={this.toggleOpen}/>
         }
 
         toggleOpen = ev => {

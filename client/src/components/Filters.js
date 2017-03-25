@@ -11,7 +11,7 @@ class Filter extends Component {
         return (
             <div>
                 <DatePicker />
-                <SelectFilter articles = {this.props.articles} />
+                <SelectFilter articles={this.props.articles} />
             </div>
         )
     }
